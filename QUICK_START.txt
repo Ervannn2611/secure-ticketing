@@ -1,0 +1,100 @@
+╔══════════════════════════════════════════════════════════════╗
+║         🎫 SECURE TICKETING SYSTEM - QUICK START            ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ SETUP SUDAH SELESAI!
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🚀 CARA MENJALANKAN                                          │
+└──────────────────────────────────────────────────────────────┘
+
+1. Jalankan server:
+   $ php artisan serve
+
+2. Buka browser:
+   http://localhost:8000
+
+┌──────────────────────────────────────────────────────────────┐
+│ 👤 LOGIN DENGAN AKUN DEMO                                    │
+└──────────────────────────────────────────────────────────────┘
+
+Password untuk semua akun: password
+
+┌─────────────────────────────┬──────────┬─────────────────────┐
+│ Email                       │ Role     │ Akses               │
+├─────────────────────────────┼──────────┼─────────────────────┤
+│ admin@wikrama.sch.id        │ Admin    │ Full access         │
+│ staff@wikrama.sch.id        │ Staff    │ Handle tickets      │
+│ budi@student.wikrama.sch.id │ User     │ Own tickets         │
+│ siti@student.wikrama.sch.id │ User     │ Own tickets         │
+└─────────────────────────────┴──────────┴─────────────────────┘
+
+Atau gunakan akun alternatif:
+• admin@example.com / Admin123
+• staff@example.com / Staff123
+• user@example.com / User1234
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📝 REGISTER AKUN BARU                                        │
+└──────────────────────────────────────────────────────────────┘
+
+URL: http://localhost:8000/register
+
+Password harus memenuhi:
+✓ Minimal 8 karakter
+✓ Ada huruf BESAR (A-Z)
+✓ Ada huruf kecil (a-z)
+✓ Ada angka (0-9)
+
+Contoh: User1234, Admin123, Test1234
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🎯 LAB YANG TERSEDIA                                         │
+└──────────────────────────────────────────────────────────────┘
+
+🔐 Authentication Lab    → /auth-lab
+🛡️  Authorization Lab    → /authorization-lab
+💉 SQL Injection Lab    → /sqli-lab
+🔓 XSS Lab              → /xss-lab
+🔒 CSRF Lab             → /csrf-lab
+✅ Validation Lab       → /validation-lab
+📁 File Upload Lab      → /file-upload-lab
+🎫 Ticketing System     → /tickets
+👨‍💼 Admin Panel          → /admin
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🔧 TROUBLESHOOTING                                           │
+└──────────────────────────────────────────────────────────────┘
+
+Register tidak berfungsi?
+$ php artisan optimize:clear
+
+Error database?
+$ php artisan migrate:fresh --seed
+⚠️  Peringatan: Ini akan menghapus semua data!
+
+Error permission?
+$ chmod -R 775 storage bootstrap/cache
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📚 DOKUMENTASI                                               │
+└──────────────────────────────────────────────────────────────┘
+
+README_QUICK_START.md  → Panduan singkat
+SETUP_GUIDE.md         → Dokumentasi lengkap
+
+┌──────────────────────────────────────────────────────────────┐
+│ ⚠️  CATATAN KEAMANAN                                         │
+└──────────────────────────────────────────────────────────────┘
+
+Aplikasi ini untuk PEMBELAJARAN. Beberapa fitur sengaja
+dibuat vulnerable untuk demonstrasi.
+
+🟢 SECURE badge     = Implementasi aman
+🔴 VULNERABLE badge = Sengaja vulnerable untuk demo
+
+JANGAN gunakan kode vulnerable di production!
+
+═══════════════════════════════════════════════════════════════
+Selamat belajar secure coding! 🔒
+═══════════════════════════════════════════════════════════════
