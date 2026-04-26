@@ -1,13 +1,16 @@
 name: Laravel Test
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -15,13 +18,26 @@ jobs:
           php-version: 8.2
 
       - name: Install Dependencies
-        run: composer install --no-interaction
+        run: composer install --prefer-dist --no-interaction
 
       - name: Copy Env
         run: cp .env.example .env
 
       - name: Generate Key
         run: php artisan key:generate
+
+      - name: Create SQLite Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
+      - name: Configure Testing DB
+        run: |
+          echo "DB_CONNECTION=sqlite" >> .env
+          echo "DB_DATABASE=$(pwd)/database/database.sqlite" >> .env
+
+      - name: Run Migration
+        run: php artisan migrate --force
 
       - name: Run Tests
         run: php artisan test
